@@ -95,6 +95,7 @@ class _LoginScreenState extends State<LoginScreen> {
               child: TextField(
                 enableSuggestions: false,
                 autocorrect: false,
+
                 controller: _usernameController,
                 decoration: InputDecoration(border: InputBorder.none,hintText: "UserName",hintStyle: TextStyle(fontSize: 12)),
                 style: TextStyle(decoration: TextDecoration.none,),
