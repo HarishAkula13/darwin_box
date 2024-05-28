@@ -51,7 +51,7 @@ class WeatherBloc extends BlocBase {
   }
 
   void setListener(String latlng) {
-    if(_connectionStatus[0].name!='none'){
+    if(_connectionStatus[0].name!=null){
       _isLoading.add(true);
       WeatherService().getWeatherReports(latlng).then((value) {
         _isLoading.add(false);
