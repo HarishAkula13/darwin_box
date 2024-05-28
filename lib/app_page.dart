@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import '../app/arch/bloc_provider.dart';
 import '../app/bloc/app_bloc.dart';
-import 'app/lifestyle/life_cycle.dart';
+import 'app/lifecycle/life_cycle.dart';
 
 
 class AppPage extends StatefulWidget {

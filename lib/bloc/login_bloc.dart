@@ -10,30 +10,3 @@ class LoginBloc extends BlocBase {
 
 }
 
-/*
-class AuthBloc extends Bloc<AuthEvent, AuthState> {
-  AuthBloc() : super(AuthInitial()) {
-    on<LoginEvent>(_onLogin);
-    on<LoadAuthEvent>(_onLoadAuth);
-  }
-
-  void _onLogin(LoginEvent event, Emitter<AuthState> emit) async {
-    final prefs = await SharedPreferences.getInstance();
-    await prefs.setString('username', event.username);
-    await prefs.setString('password', event.password);
-    emit(Authenticated(event.username, event.password));
-  }
-
-  void _onLoadAuth(LoadAuthEvent event, Emitter<AuthState> emit) async {
-    final prefs = await SharedPreferences.getInstance();
-    final username = prefs.getString('username');
-    final password = prefs.getString('password');
-
-    if (username != null && password != null) {
-      emit(Authenticated(username, password));
-    } else {
-      emit(Unauthenticated());
-    }
-  }
-}
-*/

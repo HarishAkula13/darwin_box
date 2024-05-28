@@ -51,10 +51,8 @@ class WeatherBloc extends BlocBase {
   }
 
   void setListener(String latlng) {
-    _isLoading.add(true);
     if(_connectionStatus[0].name!='none'){
       _isLoading.add(true);
-
       WeatherService().getWeatherReports(latlng).then((value) {
         _isLoading.add(false);
         EncryptedSharedPreferences.getInstance().setString(Constants.WEATHER, json.encode(value.data!.toJson()),notify: true);
