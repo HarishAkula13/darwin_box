@@ -110,11 +110,11 @@ class _WeatherPageState extends State<WeatherPage> {
                   stream: _bloc!.forecastData,
                   builder: (b,fs){
                     return fs.data!=null&&fs.data!.forecastday!=null?
-                    (fs.data!.forecastday![0]!.hour!=null)?ListView.builder(
+                    (fs.data!.forecastday![0].hour!=null)?ListView.builder(
                       shrinkWrap: true,
                       physics: NeverScrollableScrollPhysics(),
                       padding: EdgeInsets.all(16),
-                        itemCount: fs.data!.forecastday![0]!.hour!.length,
+                        itemCount: fs.data!.forecastday![0].hour!.length,
                         itemBuilder: (b,i){
                           DateTime dateTime = DateTime(2024, 1, 1, (i+1));
                           return Container(
@@ -131,17 +131,17 @@ class _WeatherPageState extends State<WeatherPage> {
                               children: [
                                 Text(DateFormat('h a').format(dateTime).toString(),style: TextStyle(fontSize: 20,color: Colors.black,fontWeight: FontWeight.w600)),
                                 Spacer(),
-                                Text(fs.data!.forecastday![0]!.hour![i].condition!.text.toString() ?? '',style: TextStyle(fontSize: 16,color: Colors.black,fontWeight: FontWeight.w600),),
+                                Text(fs.data!.forecastday![0].hour![i].condition!.text.toString() ?? '',style: TextStyle(fontSize: 16,color: Colors.black,fontWeight: FontWeight.w600),),
                                 Spacer(),
                                 Column(
                                   children: [
-                                    Image.network('https:${fs.data!.forecastday![0]!.hour![i].condition!.icon.toString()}',
+                                    Image.network('https:${fs.data!.forecastday![0].hour![i].condition!.icon.toString()}',
                                       errorBuilder: (BuildContext context, Object exception, stackTrace) {
 
                                         return Text('😢');
                                       },
                                       height: 45,width: 45,),
-                                    Text(fs.data!.forecastday![0]!.hour![i].tempC.toString()+"°C",style: TextStyle(fontSize: 14,color: Colors.black,fontWeight: FontWeight.w400),),
+                                    Text(fs.data!.forecastday![0].hour![i].tempC.toString()+"°C",style: TextStyle(fontSize: 14,color: Colors.black,fontWeight: FontWeight.w400),),
                                       SizedBox(height: 5,)
                                   ],
                                 ),
